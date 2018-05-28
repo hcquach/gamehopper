@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+url = "https://itemdrop.co.uk/image/catalog/zldabwns.jpg"
+game = Game.new(title: "Zelda", description: "The Legend of Zelda: Breath of the Wild is an action-adventure game developed and published by Nintendo.", platform: "SWITCH", available: true)
+game.remote_photo_url = url
+game.save
+

@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2018_05_28_065729) do
     t.string "photo"
     t.string "description"
     t.string "platform"
-    t.boolean "available"
+    t.boolean "available", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
