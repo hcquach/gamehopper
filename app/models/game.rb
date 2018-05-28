@@ -6,6 +6,6 @@ class Game < ApplicationRecord
 
   belongs_to :user
   has_many :rentals
-  validates :title, :description, :platform, :available, presence: true
+  validates :title, :description, :platform, presence: true
   validates :platform, inclusion: { in: PLATFORMS }
 end
