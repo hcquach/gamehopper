@@ -1,4 +1,7 @@
 class Game < ApplicationRecord
+
+  mount_uploader :photo, PhotoUploader
+
   PLATFORMS = [ "PS4", "XBOX", "SWITCH" ]
 
   belongs_to :user
