@@ -2,8 +2,7 @@ class RentalsController < ApplicationController
    before_action :set_rental, only: [:destroy]
 
   def index
-    # pending update
-    @rental = Rental.where(user: current_user)
+    @rentals = Rental.where(user: current_user)
   end
 
   def new
