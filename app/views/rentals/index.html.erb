@@ -1,1 +1,33 @@
-<h1>Rentals#Index</h1>
+<div class="games-container">
+
+  <div class="title-container">
+
+    <div class="home-title">
+     <h1>Game Hopper</h1>
+     <h2>Complete Rented Games List</h2>
+    </div>
+
+  </div>
+  <% if @rentals.empty? %>
+    <h3 class="home-title"> No rented games </h3>
+  <% else %>
+    <div class="container">
+      <div class="row">
+        <% @rentals.each do |rental| %>
+          <div class="col-xs-12 col-sm-4">
+            <div class="card">
+              <div class="card-category">
+                <%= cl_image_tag rental.game.photo , height: 300, width: 500, crop: :fill %>
+                <h4><%= rental.game.title %></h4>
+                <p><%= rental.game.description %></p>
+                <p><%= rental.start_date %></p>
+                <p><%= rental.end_date %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+</div>

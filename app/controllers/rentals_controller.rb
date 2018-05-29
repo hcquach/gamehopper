@@ -2,7 +2,6 @@ class RentalsController < ApplicationController
    before_action :set_rental, only: [:destroy]
 
   def index
-    # pending update
     @rentals = Rental.where(user: current_user)
   end
 
