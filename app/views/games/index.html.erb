@@ -1,0 +1,29 @@
+<div class="games-container">
+
+  <div class="title-container">
+
+    <div class="home-title">
+     <h1>Game Hopper</h1>
+     <h2>List of games</h2>
+    </div>
+  </div>
+
+    <div class="card-grid">
+      <div class="row">
+        <% @cards.each do |card| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card">
+            <div class="card-platform">
+                <%= game[:platform] %>
+            </div>
+            <div class="card-title">
+              <h2><%= link_to game.title, game_path(game) %></h2>
+            </div>
+            <% link_to game.title, game_path(game), class:"card-link" %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+</div>
