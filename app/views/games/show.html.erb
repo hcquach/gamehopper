@@ -1,0 +1,36 @@
+<div class="single-game-container">
+
+  <div class="wrapper">
+
+      <div class="game-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @game.photo, crop: :fill_pad %>');">
+      </div>
+
+      <div class="game-info">
+
+        <div class="title">
+          <h1><%= @game.title %> - <%= @game.platform.capitalize %></h1>
+          <h2><%= @game.description %></h2>
+        </div>
+
+        <div class="availability">
+          <h2>
+            <% if @game.available %>
+              Available
+            <% else %>
+              Not Available
+            <% end %>
+          </h2>
+        </div>
+
+        <div class="button">
+        <%= link_to 'Delete', game_path(@game), method: :delete, class: "btn btn-danger btn-delete" %>
+        </div>
+
+        <div class="button">
+        <%= link_to "Rent", new_game_rental_path(@game), class: "btn btn-primary btn-rent" %>
+        </div>
+      </div>
+
+    </div>
+
+</div>

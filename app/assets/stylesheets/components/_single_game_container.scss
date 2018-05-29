@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Glegoo');
+
+.single-game-container {
+  padding-top: 30px;
+  position: sticky !important;
+}
+
+.wrapper {
+}
+
+.single-game-container h1 {
+  top: 20%;
+  left: 0;
+  width: 100%;
+  font-family: 'Glegoo', serif;
+  text-align: center;
+  font-weight: 400;
+  font-size: 2em;
+  line-height: 1em;
+  color: #2d2d2d;
+  display: inline-block;
+  border-top: 1px solid #2d2d2d;
+  border-bottom: 1px solid #2d2d2d;
+  padding: .5em .6em;
+}
+
+.single-game-container h2 {
+  width: 100%;
+  font-family: 'Glegoo', serif;
+  text-align: center;
+  font-weight: 200;
+  font-size: 1em;
+  line-height: 1em;
+  color: #2d2d2d;
+  display: inline-block;
+  padding: .5em .6em;
+}
+
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.game-photo {
+  background-size: cover;
+  height: 80vh;
+  width: 400px;
+}
+
+.game-info {
+  position: relative;
+  background: linear-gradient(-10deg, #D7F2FE, #C8E1F2, #B9D0E5, #FFFFFF);
+  height: 80vh;
+  width: 400px;
+}
+
+.btn-rent {
+  position: absolute;
+  font-family: 'Glegoo', serif;
+  color: #2d2d2d;
+  text-align: center;
+  bottom: 30px;
+  left: 25%;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.btn-delete {
+  position: absolute;
+  font-family: 'Glegoo', serif;
+  color: #2d2d2d;
+  text-align: center;
+  bottom: 30px;
+  right: 25%;
+  font-size: 24px;
+  text-decoration: none;
+}
