@@ -1,0 +1,135 @@
+/* Importing the font */
+@import url('https://fonts.googleapis.com/css?family=Glegoo');
+
+/* Global container */
+.games-container {
+  padding: 0px;
+}
+
+/* Container for the title and subtitle */
+.title-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.home-title h1, h2 {
+  width: 100%;
+  font-family: 'Glegoo', serif;
+  text-align: center;
+  font-weight: 400;
+  color: #2d2d2d;
+  display: inline-block;
+}
+
+.home-title h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.home-title h2 {
+  font-size: 1em;
+}
+
+/* Body and background */
+
+body {
+  width: 100wh;
+  height: 90vh;
+  color: #fff;
+  margin: 0px;
+  background: linear-gradient(-45deg, #8CAFD2, #A8A69B, #CCCCCC, #97969B);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+/* Cards */
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  height: 300px;
+  width: 300px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  margin: 20px 20px;
+  border-style: solid;
+  border-width: 20px;
+  border-color: white;
+  border-radius: 3px;
+  padding: 0px;
+}
+
+.card-platform {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.card-title {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+  text-decoration: none;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
+
+
