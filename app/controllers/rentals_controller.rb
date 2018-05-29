@@ -1,12 +1,15 @@
 class RentalsController < ApplicationController
    before_action :set_rental, only: [:destroy]
+
   def index
-    @rentals = Rental.all
+    # pending update
+    @rental = Rental.where(user: current_user)
   end
 
   def new
     @rental = Rental.new
     set_game_rental
+    current_signed_in_user
     @user = User.find(params[:user_id])
   end
 
@@ -53,6 +56,10 @@ class RentalsController < ApplicationController
 
   def set_rental
     @rental = Rental.find(params[:id])
+  end
+
+  def current_signed_in_user
+    @rentals.user = current_user
   end
 
 end
