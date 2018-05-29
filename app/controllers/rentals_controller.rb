@@ -6,10 +6,10 @@ class RentalsController < ApplicationController
     @rentals = Rental.where(user: current_user)
   end
 
-  def new
-    @rental = Rental.new
-    @user = current_user
-  end
+  # def new
+  #   @rental = Rental.new
+  #   @user = current_user
+  # end
 
   def create
     @rental = Rental.new(start_date: Date.today, end_date: Date.today + 7)
