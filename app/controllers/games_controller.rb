@@ -9,7 +9,7 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.create(game_params)
+    @game = Game.new(game_params)
     if @game.save
       redirect_to game_path(@game)
     else
@@ -28,7 +28,7 @@ class GamesController < ApplicationController
     if @game.save
       redirect_to game_path(@game)
     else
-      render :update
+      render :edit
     end
   end
 
@@ -39,7 +39,7 @@ class GamesController < ApplicationController
 
   private
   def game_params
-    params.require(:game).permit(:title, :photo, :description, :platform, :vailable, :uder_id)
+    params.require(:game).permit(:title, :photo, :description, :platform, :available, :user_id)
   end
 
   def set_game
