@@ -27,7 +27,7 @@
         </div>
 
         <div class="button">
-        <%= link_to "Rent", new_game_rental_path(@game), class: "btn btn-primary btn-rent" %>
+        <%= link_to "Rent", game_rentals_path(@game), method: :create, class: "btn btn-primary btn-rent" %>
         </div>
       </div>
 
