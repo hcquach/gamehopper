@@ -23,12 +23,14 @@
 }
 
 .home-title h1 {
-  font-size: 2em;
+  font-size: 30px;
   font-weight: bold;
 }
 
-.home-title h2 {
-  font-size: 1em;
+.games-container > h2 {
+  font-size: 20px;
+  text-align: left;
+  padding: 10px 30px;
 }
 
 /* Body and background */
@@ -117,19 +119,14 @@ body {
   bottom: 10px;
   left: 10px;
 }
-.card-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index: 2;
-  background: black;
-  opacity: 0;
+
+.card-title h2 a {
+  font-size: 20px;
   text-decoration: none;
-}
-.card-link:hover {
-  opacity: 0.1;
+  text-align: left;
+  color: white;
 }
 
-
+.card-title a:hover {
+  color: red;
+}
