@@ -43,12 +43,11 @@ class RentalsController < ApplicationController
   # end
 
   def destroy
-    # @rental.game_id = params[:game_id]
-    # @game = params[:game_id]
-    # @game.available = true
-    # @game.save
+    set_rental
+    @game = Game.find(@rental.game_id)
+    @game.available = true
+    @game.save
     @rental.destroy
-
     redirect_to rentals_path
   end
 
