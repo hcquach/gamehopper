@@ -14,7 +14,7 @@ class RentalsController < ApplicationController
     @rental = Rental.new(start_date: Date.today, end_date: Date.today + 7)
     current_signed_in_user
     @rental.game_id = params[:game_id]
-    if set_game_rental.user = @rental.user
+    if set_game_rental.user == @rental.user
       flash[:alert] = "You cannot rent your own game"
       redirect_to game_path(@game)
     elsif @rental.save
@@ -43,7 +43,12 @@ class RentalsController < ApplicationController
   # end
 
   def destroy
+    # @rental.game_id = params[:game_id]
+    # @game = params[:game_id]
+    # @game.available = true
+    # @game.save
     @rental.destroy
+
     redirect_to rentals_path
   end
 
