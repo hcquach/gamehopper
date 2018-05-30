@@ -1,0 +1,32 @@
+.rental-block {
+  display: flex;
+  margin: 40px 0px;
+  justify-content: center;
+}
+
+.rental-card {
+  border-radius: 5px;
+  box-shadow: 1px;
+}
+
+.rental-description {
+  color: #2d2d2d;
+  padding: 30px;
+  width: 400px;
+}
+
+.btn-rental-delete {
+  font-family: 'Glegoo', serif;
+  color: #2d2d2d;
+  text-align: center;
+  bottom: 20px;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.btn-rental {
+  padding: 40px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
