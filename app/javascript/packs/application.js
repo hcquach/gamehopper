@@ -1,7 +1,4 @@
 import "bootstrap";
-
-// import "../shared/gamedatabase";
-
 import GMaps from 'gmaps/gmaps.js';
 
 const mapElement = document.getElementById('map');
