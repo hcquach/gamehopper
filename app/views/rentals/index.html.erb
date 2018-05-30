@@ -12,21 +12,24 @@
     <h3 class="home-title"> No rented games </h3>
   <% else %>
     <div class="container">
-      <div class="row">
+
         <% @rentals.each do |rental| %>
-          <div class="col-xs-12 col-sm-4">
-            <div class="card">
-              <div class="card-category">
-                <%= cl_image_tag @rental.game.photo , height: 300, width: 500, crop: :fill %>
+            <div class="rental-block">
+              <div class = "rental-card" >
+                <%= cl_image_tag rental.game.photo , height: 500, width: 400, crop: :fill %>
+              </div>
+              <div class = "rental-description">
                 <h4><%= rental.game.title %></h4>
                 <p><%= rental.game.description %></p>
                 <p><%= rental.start_date %></p>
                 <p><%= rental.end_date %></p>
+                <div class="btn-rental">
+                  <%= link_to 'Cancel', rental_path(rental), method: :delete, class: "btn btn-danger btn-rental-delete" %>
+                </div>
               </div>
             </div>
-          </div>
         <% end %>
-      </div>
+
     </div>
   <% end %>
 

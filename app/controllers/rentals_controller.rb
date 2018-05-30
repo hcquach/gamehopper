@@ -5,22 +5,25 @@ class RentalsController < ApplicationController
     @rentals = Rental.where(user: current_user)
   end
 
-  def new
-    @rental = Rental.new
-    set_game_rental
-    current_signed_in_user
-    @user = User.find(params[:user_id])
-  end
+  # def new
+  #   @rental = Rental.new
+  #   @user = current_user
+  # end
 
   def create
-    @rental = Rental.new(rental_params)
-    set_game_rental
-    if @rental.save
+    @rental = Rental.new(start_date: Date.today, end_date: Date.today + 7)
+    current_signed_in_user
+    @rental.game_id = params[:game_id]
+    if set_game_rental.user = @rental.user
+      flash[:alert] = "You cannot rent your own game"
+      redirect_to game_path(@game)
+    elsif @rental.save
+      set_game_rental
       @game.available = false
       @game.save
       redirect_to rentals_path
     else
-      render :new
+      redirect_to game_path(@game)
     end
   end
 
@@ -58,7 +61,7 @@ class RentalsController < ApplicationController
   end
 
   def current_signed_in_user
-    @rentals.user = current_user
+    @rental.user = current_user
   end
 
 end
