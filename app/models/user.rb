@@ -5,6 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :games
   has_many :rentals
-  validates :username, presence: true, uniqueness: true
-  validates :email, presence: :true, uniqueness: true
+  validates :username, :email, presence: true, uniqueness: true
+  validates :address, presence: true
+
+  # For geocoding
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
