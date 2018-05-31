@@ -4,6 +4,7 @@
 /* Global container */
 .games-container {
   padding: 0px;
+  margin: 20px;
 }
 
 /* Container for the title and subtitle */
@@ -28,9 +29,10 @@
 }
 
 .games-container > h2 {
-  font-size: 20px;
+  font-size: 25px;
   text-align: left;
   padding: 10px 30px;
+  text-align: center;
 }
 
 /* Body and background */
@@ -107,20 +109,25 @@ body {
   color: white;
   position: relative;
   border-style: solid;
-  border-width: 4px;
+  border-width: 1px;
   border-color: #D3D3D3;
   border-radius: 3px;
 }
 
 .card-platform {
-  font-size: 15px;
+  font-size: fit-width;
   text-transform: uppercase;
   color: #949494;
+
+
 }
 .card-title {
+  margin-top: 5px;
   color: gray;
-  font-size: 30px;
+  font-size: fit-width;
   font-weight: bold;
+
+
 }
 
 .card-title h2 a {
