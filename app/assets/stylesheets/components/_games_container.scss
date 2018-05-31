@@ -85,48 +85,51 @@ body {
 
 /* Cards */
 
-.card-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.card-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.card-body {
+  background: white;
+  height: 320px;
+  border: 1px solid #e0e0e0;
+}
+
 
 .card {
   height: 250px;
-  width: 250px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
-  margin: 30px 10px;
   border-style: solid;
-  border-width: 10px;
-  border-color: white;
+  border-width: 4px;
+  border-color: #D3D3D3;
   border-radius: 3px;
-  padding: 0px;
 }
 
 .card-platform {
-  position: absolute;
-  top: 10px;
-  left: 10px;
   font-size: 15px;
   text-transform: uppercase;
+  color: #949494;
 }
 .card-title {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
+  color: gray;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .card-title h2 a {
   font-size: 20px;
   text-decoration: none;
   text-align: left;
-  color: white;
+  color: black;
 }
 
-.card-title a:hover {
-  color: red;
+a:hover {
+  text-decoration: none;
 }
