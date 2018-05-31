@@ -17,7 +17,7 @@ class RentalsController < ApplicationController
     if set_game_rental.user == @rental.user
       flash[:alert] = "You cannot rent your own game"
       redirect_to game_path(@game)
-    elsif @rental.save
+    elsif @rental.save && @game.available
       set_game_rental
       @game.available = false
       @game.save
