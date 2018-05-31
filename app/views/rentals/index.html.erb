@@ -21,6 +21,7 @@ Game Hopper-Rental List
         <p><%= rental.game.description %></p>
       </div>
       <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
+        <li><p>PRICE : <%=  rental.game.price %></p></li>
         <li><p>FROM : <%=  rental.start_date.strftime("%A, %b %d") %></p></li>
         <li><p>UNTIL : <%=  rental.end_date.strftime("%A, %b %d") %></p></li>
         <li> <%= link_to 'Cancel', rental_path(rental), method: :delete, class: "btn-medium" %></li>

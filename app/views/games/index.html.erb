@@ -2,6 +2,8 @@
 Game Hopper-Landing
 <% end %>
 <div class="games-container">
+
+<% if !params[:query].present? %>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -18,7 +20,9 @@ Game Hopper-Landing
       </div>
     </div>
     <div class="item">
-      <%= cl_image_tag @games.first.photo %>
+      <%= cl_image_tag(@games.first.photo, :transformation =>[ { :q_auto=>"best"},
+           {:width=>1500, :height=>700, :crop=>"fill"}
+      ])%>
       <div class="carousel-caption">
         <div class="title-carousel">
           <h5><%= @games.first.platform %></h5>
@@ -31,7 +35,9 @@ Game Hopper-Landing
     </div>
 
     <div class="item">
-      <%= cl_image_tag @games.second.photo %>
+      <%= cl_image_tag(@games.second.photo, :transformation =>[ { :q_auto=>"best"},
+           {:width=>800, :height=>800, :crop=>"fill"}
+      ])%>
       <div class="carousel-caption">
         <div class="title-carousel">
           <h5><%= @games.second.platform %></h5>
@@ -44,6 +50,8 @@ Game Hopper-Landing
     </div>
   </div>
 
+
+
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left"></span>
@@ -53,28 +61,48 @@ Game Hopper-Landing
     <span class="glyphicon glyphicon-chevron-right"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>
-
+  </div>
     <h2>Complete Games List</h2>
+<%end%>
 
-    <div class="card-grid">
-      <div class="row">
-        <% @games.each do |game| %>
+
+<% if Game.search_by_title_and_platform(params[:query]) == [] && params[:query] %>
+
+  <div class="deadlink">
+    <!-- <div class="col-xs-12 col-sm-3 col-md-4 col-md-offset-4"> -->
+    <h2> Game Over</h2>
+      <%= image_tag "deadlink.png", class: "image-404" %>
+    <!-- </div> -->
+  </div>
+
+
+
+<% else %>
+  <div class="card-grid">
+    <div class="row">
+      <!-- Template for games to be turned into cards -->
+      <% @games.each do |game| %>
         <div class="col-xs-12 col-sm-3">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path game.photo, crop: :fill %>');">
-            <div class="card-platform">
-                <%= game[:platform] %>
+          <!-- entire card body wrapped in link -->
+          <%= link_to game_path(game) do %>
+            <div class="card-body">
+              <div class="card-head">
+                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path game.photo, crop: :fill %>');">
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="card-title">
+                  <%= game.title %>
+                </div>
+                <div class="card-platform">
+                  <%= game[:platform] %>
+                </div>
+              </div>
             </div>
-            <div class="card-title">
-              <h2><%= link_to game.title, game_path(game) %></h2>
-            </div>
-            <% link_to game.title, game_path(game), class:"card-link" %>
-          </div>
+          <% end %>
         </div>
-
-        <% end %>
-      </div>
+      <% end %>
     </div>
-
-
+  </div>
+  <% end %>
 </div>
