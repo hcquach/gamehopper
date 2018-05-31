@@ -1,27 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Glegoo');
 
 .single-game-container {
-  padding-top: 30px;
   position: sticky !important;
-}
-
-.wrapper {
+  display: flex;
+  justify-content: space-between;
 }
 
 .single-game-container h1 {
-  top: 20%;
   left: 0;
   width: 100%;
   font-family: 'Glegoo', serif;
   text-align: center;
   font-weight: 400;
-  font-size: 2em;
+  font-size: 1.5em;
   line-height: 1em;
-  color: #2d2d2d;
+  color: white;
   display: inline-block;
-  border-top: 1px solid #2d2d2d;
-  border-bottom: 1px solid #2d2d2d;
-  padding: .5em .6em;
+  border-bottom: 1px solid white;
+  padding: 0em .5em .6em;
 }
 
 .single-game-container h2 {
@@ -29,13 +25,12 @@
   font-family: 'Glegoo', serif;
   text-align: center;
   font-weight: 200;
-  font-size: 1em;
+  font-size: 15px;
   line-height: 1em;
-  color: #2d2d2d;
+  color: white;
   display: inline-block;
   padding: .5em .6em;
 }
-
 
 .wrapper {
   display: flex;
@@ -45,17 +40,49 @@
   height: 100vh;
 }
 
+.nav-xbox, .nav-ps4, .nav-switch {
+  left: 0;
+  height: 69px;
+  width: 100%;
+  font-family: 'Glegoo', serif;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.5em;
+  line-height: 1em;
+  color: white;
+  line-height: 1em;
+  display: inline-block;
+  border-bottom: 1px solid white;
+  padding: 0em .5em .6em;
+  border-radius: 5px 0px 0px 0px;
+}
+
+.nav-xbox {
+  background: linear-gradient(-10deg, #1A711A, #348D33);
+}
+
+.nav-ps4 {
+  background: linear-gradient(-10deg, #294B8E, #2D93C8);
+}
+
+.nav-switch {
+ background: linear-gradient(-10deg, #F90E24, #DD0B1F);
+}
+
 .game-photo {
   background-size: cover;
   height: 80vh;
-  width: 400px;
+  width: 300px;
+  border-radius: 5px 0px 0px 5px;
 }
 
 .game-info {
   position: relative;
-  background: linear-gradient(-10deg, #D7F2FE, #C8E1F2, #B9D0E5, #FFFFFF);
+  background: linear-gradient(-10deg, #0B314A, #134F63);
+  // background: #0B314A;
   height: 80vh;
-  width: 400px;
+  width: 300px;
+  border-radius: 0px 5px 5px 0px;
 }
 
 .btn-rent {
@@ -64,8 +91,8 @@
   color: #2d2d2d;
   text-align: center;
   bottom: 30px;
-  left: 25%;
-  font-size: 24px;
+  left: 10%;
+  font-size: 20px;
   text-decoration: none;
 }
 
@@ -75,7 +102,14 @@
   color: #2d2d2d;
   text-align: center;
   bottom: 30px;
-  right: 25%;
-  font-size: 24px;
+  right: 10%;
+  font-size: 20px;
   text-decoration: none;
+}
+
+#map {
+  flex: 0 0 450px;
+  height: 100vh;
+  position: sticky !important; /* !important to override Gmaps inline CSS */
+  top: 0 !important;
 }

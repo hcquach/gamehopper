@@ -1,44 +1,61 @@
+<%= content_for(:title) do %>
+Game Hopper-Landing
+<% end %>
 <div class="games-container">
-
-  <div class="title-container">
-
-    <div class="home-title">
-      <h1>WELCOME TO GAME HOPPER</h1>
-    </div>
-
-  </div>
-
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-        <img src="https://images.alphacoders.com/564/thumb-1920-564986.jpg" alt="Metal Gear">
-      </div>
-      <div class="item">
-        <img src="http://gameranx.com/images/updates/1274566383red3-1080p.jpg" alt="Red Dead">
-      </div>
-      <div class="item">
-        <img src="https://2.bp.blogspot.com/-pjS1fweA5lM/WdzKeI-mDpI/AAAAAAAAGYc/MSB6Wv6lJKkkQ4x70uULGqQlkP6WFfLjgCLcBGAs/s1920/Splatoon-2-Desktop-Wallpaper.jpg" alt="Splatoon 2">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active cover">
+      <img src="https://images.alphacoders.com/564/thumb-1920-564986.jpg" alt="Metal Gear">
+      <div class="carousel-caption comment-1">
+        <h1>Game Hopper </h1>
       </div>
     </div>
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
+    <div class="item">
+      <%= cl_image_tag @games.first.photo %>
+      <div class="carousel-caption">
+        <div class="title-carousel">
+          <h5><%= @games.first.platform %></h5>
+          <h3><%= @games.first.title %></h3>
+        </div>
+        <div class="btn-carousel">
+        <%= link_to "Rent Now", game_path(@games.first.id), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <%= cl_image_tag @games.second.photo %>
+      <div class="carousel-caption">
+        <div class="title-carousel">
+          <h5><%= @games.second.platform %></h5>
+          <h3><%= @games.second.title %></h3>
+        </div>
+        <div class="btn-carousel">
+        <%= link_to "Rent Now", game_path(@games.second.id), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <h2>Complete Games List</h2>
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+    <h2>Complete Games List</h2>
 
   <div class="card-grid">
     <div class="row">
@@ -66,4 +83,8 @@
       <% end %>
     </div>
   </div>
+=======
+
+
+>>>>>>> master
 </div>

@@ -1,14 +1,30 @@
+<%= content_for(:title) do %>
+Game Hopper-<%=@game.title%>
+<% end %>
 <div class="single-game-container">
 
   <div class="wrapper">
 
       <div class="game-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @game.photo, crop: :fill_pad %>');">
+
+      <div class="
+        <% case @game.platform %>
+        <% when "XBOX" %>
+        <%= "nav-xbox" %>
+        <% when "PS4" %>
+        <%= "nav-ps4" %>
+        <% when "SWITCH" %>
+        <%= "nav-switch" %>
+        <% end %>
+        ">
+      </div>
+
       </div>
 
       <div class="game-info">
 
         <div class="title">
-          <h1><%= @game.title %> - <%= @game.platform.capitalize %></h1>
+          <h1><%= @game.title %></h1>
           <h2><%= @game.description %></h2>
         </div>
 
@@ -34,11 +50,9 @@
 
     </div>
 
-    <div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-></div>
+  <div
+      id="map"
+      data-markers="<%= @markers.to_json %>"
+    ></div>
 
 </div>

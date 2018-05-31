@@ -1,32 +1,110 @@
-.rental-block {
+// .rental-block {
+//   display: flex;
+//   margin: 40px 0px;
+//   justify-content: center;
+// }
+
+// .rental-card {
+//   border-radius: 5px;
+//   box-shadow: 1px;
+// }
+
+// .rental-description {
+//   color: #2d2d2d;
+//   padding: 30px;
+//   width: 400px;
+// }
+
+// .btn-rental-delete {
+//   font-family: 'Glegoo', serif;
+//   color: #2d2d2d;
+//   text-align: center;
+//   bottom: 20px;
+//   font-size: 24px;
+//   text-decoration: none;
+// }
+
+// .btn-rental {
+//   padding: 40px 0px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+.btn-medium {
+  color: #e55757;
+  border: 1px solid #e55757;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+}
+.btn-medium:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: #e55757;
+}
+
+.product {
   display: flex;
-  margin: 40px 0px;
-  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
 }
-
-.rental-card {
-  border-radius: 5px;
-  box-shadow: 1px;
-}
-
-.rental-description {
-  color: #2d2d2d;
-  padding: 30px;
+ul {
   width: 400px;
 }
 
-.btn-rental-delete {
-  font-family: 'Glegoo', serif;
+/* Body design */
+.product-body {
+  flex: 1 1 auto;
+}
+.product-body h3 {
+  font-weight: bold;
+  font-size: 23px;
+  margin-top: 0;
+}
+.product-body p {
+  font-weight: lighter;
+  margin-bottom: 0;
   color: #2d2d2d;
-  text-align: center;
-  bottom: 20px;
-  font-size: 24px;
-  text-decoration: none;
+  padding: 0px 20px;
 }
 
-.btn-rental {
-  padding: 40px 0px;
+/* Product image */
+.product-image {
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+
+/* Controls design */
+.product-controls {
   display: flex;
   align-items: center;
-  justify-content: center;
+  text-align: center;
+  margin: 0px;
+}
+.product-controls p {
+  padding: 0 20px;
+  font-size: 17px;
+  color: #2d2d2d;
+}
+
+
+/* Hover effects */
+.product:hover {
+  background: #f7f7fa;
+  cursor: pointer;
+}
+
+// .product:hover .product-upvote {
+//   transform: scale(1.2)
+// }
+.product:hover .product-controls-hidden p .product-body p{
+  color: #E6E6E6;
+}
+.product-upvote:hover .product-arrow {
+  border-bottom: 9px solid #5898f1;
 }
