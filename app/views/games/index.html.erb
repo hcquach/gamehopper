@@ -60,7 +60,18 @@ Game Hopper-Landing
 <%end%>
 
 
+<% if Game.search_by_title_and_platform(params[:query]) == [] && params[:query] %>
 
+  <div class="deadlink">
+    <!-- <div class="col-xs-12 col-sm-3 col-md-4 col-md-offset-4"> -->
+    <h2> Game Over</h2>
+      <%= image_tag "deadlink.png", class: "image-404" %>
+    <!-- </div> -->
+  </div>
+
+
+
+<% else %>
   <div class="card-grid">
     <div class="row">
       <!-- Template for games to be turned into cards -->
@@ -87,4 +98,5 @@ Game Hopper-Landing
       <% end %>
     </div>
   </div>
+  <% end %>
 </div>

@@ -133,3 +133,18 @@ body {
 a:hover {
   text-decoration: none;
 }
+
+.deadlink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.deadlink h2 {
+  padding: 45px;
+}
+
+.image-404 {
+  padding: 40px;
+}
