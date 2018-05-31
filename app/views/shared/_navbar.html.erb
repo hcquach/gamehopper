@@ -3,6 +3,14 @@
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "gamehopperwhite.png", height: 50 %>
   <% end %>
+    <%= form_tag games_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a game"
+      %>
+    <% end %>
+
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -12,8 +20,8 @@
       <!-- Links when logged in -->
 
       <%= link_to "Post a game", new_game_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Rentals", rentals_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to current_user.email, "#", class: "navbar-wagon-item navbar-wagon-link"  %>
+      <%= link_to "Your Rentals", rentals_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to current_user.username, "#", class: "navbar-wagon-item navbar-wagon-link"  %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -49,9 +57,12 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><%= link_to "Post a game", new_game_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to "Your Rentals", rentals_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+        </li>
       </ul>
     </div>
   </div>
