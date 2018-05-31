@@ -2,6 +2,8 @@
 Game Hopper-Landing
 <% end %>
 <div class="games-container">
+
+<% if !params[:query].present? %>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -53,9 +55,11 @@ Game Hopper-Landing
     <span class="glyphicon glyphicon-chevron-right"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>
-
+  </div>
     <h2>Complete Games List</h2>
+<%end%>
+
+
 
   <div class="card-grid">
     <div class="row">
@@ -83,8 +87,4 @@ Game Hopper-Landing
       <% end %>
     </div>
   </div>
-=======
-
-
->>>>>>> master
 </div>
