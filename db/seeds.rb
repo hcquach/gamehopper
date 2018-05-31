@@ -27,7 +27,7 @@ puts "User Added completed"
 # Game.destroy_all if Rails.env.development?
 
 url_one = "http://res.cloudinary.com/le-wagon-hcquach/image/upload/v1527582718/download.jpg"
-game_one = Game.create(title: "Zelda", description: "The Legend of Zelda: Breath of the Wild is an action-adventure game developed and published by Nintendo.", platform: "SWITCH", photo: "v1527504348/st5fzyj3rdwtazduuu5r.jpg", user_id: 1)
+game_one = Game.create(title: "Zelda", description: "The Legend of Zelda: Breath of the Wild is an action-adventure game developed and published by Nintendo. You go around", platform: "SWITCH", photo: "v1527504348/st5fzyj3rdwtazduuu5r.jpg", user_id: 1)
 game_one.remote_photo_url = url_one
 game_one.save
 puts
@@ -39,3 +39,6 @@ game_two.remote_photo_url = url_two
 game_two.save
 puts
 puts "Game Added completed"
+
+
+
