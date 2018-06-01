@@ -64,7 +64,7 @@ Game Hopper-<%= @game.title %>
           <div class="button">
             <% unless @game.user == current_user || !@game.available %>
               <%#= link_to "Rent", game_rentals_path(@game), method: :create, class: "btn btn-primary btn-rent", data: { toggle: "modal", target:'#exampleModal' } %>
-              <button type="button" class="btn btn-primary btn-green-flat-trigger" data-toggle="modal" data-target="#exampleModal">
+              <button type="button" class="btn btn-green-flat-trigger">
                 Rent
               </button>
 
@@ -84,48 +84,29 @@ Game Hopper-<%= @game.title %>
 
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h5 class="modal-title" id="exampleModalLabel">
-          <strong>Arrange an appointment for the handover</strong>
-        </h5>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-
-            <div class="row">
-              <div class="col-md-6 ml-auto">
-                  <br>
-                  <h5><strong>Game</strong></h5>
-                  <h6><%= @game.user.username %>'s <%= @game.title %></h6>
-                  <br>
-                  <h5><strong>Meeting point</strong></h5>
-                  <h6><%= @game.user.address %><br><br></h6>
-              </div>
-              <div class="col-md-6 ml-auto">
-                <label for="message-text" class="col-form-label"><h5>Message:</h5></label>
-                <textarea class="form-control" id="message-text" rows="6"></textarea>
-              </div>
-            </div>
-
-
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-
-        <%= mail_to @game.user.email, "Send",
-         subject: "You've got a new rental!";%>
-
-        <%= link_to "Confirm", game_rentals_path(@game), method: :create, class: "btn btn-primary btn-rent" %>
-      </div>
+<div class="global-modal">
+   <div class="overlay"></div>
+   <div class="global-modal_contents modal-transition">
+    <div class="global-modal-header">
+      <span class="mobile-close"> X </span>
+      <h3> <span> Almost there!</span> <b>Review and finalize your rental<br>Contact and arrange the handover with the owner.</b></h3>
     </div>
-  </div>
+    <div class="global-modal-body">
+      <div class="content-left">
+        <p>
+          <strong>Game</strong>
+          <%= @game.title %><br>
+          <strong>Meeting point</strong>
+          <%= @game.user.address %><br>
+        </p>
+        <%= link_to "Confirm", game_rentals_path(@game), method: :create, class: "btn-green-flat" %>
+      </div>
+      <div class="content-right">
+       <p> Arrange handover with<br>
+        <strong><%= @game.user.username %></strong>
+        <br> through the link below.</p>
+       <%= mail_to @game.user.email, "Send", subject: "You've got a new rental!", class:"btn-green-flat" %>
+     </div>
+   </div>
+ </div>
 </div>
