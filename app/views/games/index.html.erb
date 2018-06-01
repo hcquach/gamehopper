@@ -23,32 +23,25 @@ Game Hopper-Landing
     </div>
     </div>
     <div class="item">
-      <%= cl_image_tag(@games.first.photo, :transformation =>[ { :q_auto=>"best"},
-           {:width=>1500, :height=>700, :crop=>"fill"}
-      ])%>
+      <%= image_tag "carousel2.jpg"%>
+
       <div class="carousel-caption">
         <div class="title-carousel">
-          <h3><%= @games.first.title %></h3>
-          <h5><%= @games.first.platform %></h5>
+          <h3><%#= @games.first.title %>Metro Exodus</h3>
+          <h5><%#= @games.first.platform %>PS4</h5>
         </div>
-        <div class="btn-carousel">
-        <%= link_to "Rent Now", game_path(@games.first.id), class: "btn btn-home-flat" %>
-        </div>
+
       </div>
     </div>
 
     <div class="item">
-      <%= cl_image_tag(@games.second.photo, :transformation =>[ { :q_auto=>"best"},
-           {:width=>800, :height=>800, :crop=>"fill"}
-      ])%>
+      <%= image_tag "carousel4.jpg"%>
       <div class="carousel-caption">
         <div class="title-carousel">
-          <h3><%= @games.second.title %></h3>
-          <h5><%= @games.second.platform %></h5>
+          <h3><%#= @games.first.title %>Gamer</h3>
+          <h5><%#= @games.first.platform %>XBOX</h5>
         </div>
-        <div class="btn-carousel">
-        <%= link_to "Rent Now", game_path(@games.second.id), class: "btn btn-home-flat" %>
-        </div>
+
       </div>
     </div>
   </div>
