@@ -1,24 +1,26 @@
 <%= content_for(:title) do %>
 Game Hopper-sign up
 <% end %>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h2 class="text-center">Sign up</h2>
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= f.error_notification %>
+<div class="sign-image">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-4 col-md-offset-4">
+        <h2 class="text-center">Sign up</h2>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
 
-        <div class="form-inputs">
-          <%= f.input :email, required: true, autofocus: true, placeholder: "example@mail.com" %>
-          <%= f.input :username, required: true, autofocus: true, placeholder: "username" %>
-          <%= f.input :address, required: false, autofocus: true, placeholder: "123 main St, Dallas, TX 333333" %>
-          <%= f.input :password, required: true, placeholder: "*********", hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-          <%= f.input :password_confirmation, required: true, placeholder: "*********" %>
-        </div>
-        <div class="form-actions text-center">
-          <%= f.button :submit, "Sign up", class: "btn btn-primary" %>
-        </div>
-      <% end %>
+          <div class="form-inputs">
+            <%= f.input :email, required: true, autofocus: true, placeholder: "example@mail.com" %>
+            <%= f.input :username, required: true, autofocus: true, placeholder: "username" %>
+            <%= f.input :address, required: false, autofocus: true, placeholder: "123 main St, Dallas, TX 333333" %>
+            <%= f.input :password, required: true, placeholder: "*********", hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+            <%= f.input :password_confirmation, required: true, placeholder: "*********" %>
+          </div>
+          <div class="form-actions text-center">
+            <%= f.button :submit, "Sign up", class: "btn btn-primary btn-lg btn-block" %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
