@@ -27,7 +27,7 @@
   font-weight: 200;
   font-size: 15px;
   line-height: 1em;
-  color: white;
+  color: #0B314A;
   display: inline-block;
   padding: .5em .6em;
 }
@@ -38,6 +38,7 @@
   align-items: center;
   width: 100%;
   height: 100vh;
+  background-color: #1A6473;
 }
 
 .nav-xbox, .nav-ps4, .nav-switch {
@@ -59,14 +60,37 @@
 
 .nav-xbox {
   background: linear-gradient(-10deg, #1A711A, #348D33);
+  background-image: image-url("xbox.png");
+  background-size: cover;
 }
 
 .nav-ps4 {
   background: linear-gradient(-10deg, #294B8E, #2D93C8);
+  background-image: image-url("ps4.png");
+  background-size: cover;
 }
 
 .nav-switch {
- background: linear-gradient(-10deg, #F90E24, #DD0B1F);
+  background: linear-gradient(-10deg, #F90E24, #DD0B1F);
+  background-image: image-url("switch.png");
+  background-size: cover;
+}
+
+.title-xbox, .title-ps4, .title-switch {
+  border-radius: 0px 5px 0px 0px;
+  height: 69px;
+}
+
+.title-switch {
+  background-color: #E50B18;
+}
+
+.title-ps4 {
+  background-color: #064282;
+}
+
+.title-xbox {
+  background-color: #1A7C1B;
 }
 
 .game-photo {
@@ -77,34 +101,42 @@
 }
 
 .game-info {
-  position: relative;
-  background: linear-gradient(-10deg, #0B314A, #134F63);
-  // background: #0B314A;
+  // background: linear-gradient(-10deg, #0B314A, #134F63);
+  background: white;
   height: 80vh;
   width: 300px;
   border-radius: 0px 5px 5px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0.9;
+}
+
+.game-description {
+  font-style: oblique;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
 }
 
 .btn-rent {
-  position: absolute;
   font-family: 'Glegoo', serif;
   color: #2d2d2d;
   text-align: center;
-  bottom: 30px;
-  left: 10%;
   font-size: 20px;
-  text-decoration: none;
+  margin: 20px;
 }
 
 .btn-delete {
-  position: absolute;
   font-family: 'Glegoo', serif;
   color: #2d2d2d;
   text-align: center;
-  bottom: 30px;
-  right: 10%;
   font-size: 20px;
-  text-decoration: none;
+  margin: 20px;
 }
 
 #map {
