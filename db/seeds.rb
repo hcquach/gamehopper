@@ -27,14 +27,14 @@ puts "User Added completed"
 # Game.destroy_all if Rails.env.development?
 
 url_one = "http://res.cloudinary.com/le-wagon-hcquach/image/upload/v1527582718/download.jpg"
-game_one = Game.create(title: "Zelda", description: "The Legend of Zelda: Breath of the Wild is an action-adventure game developed and published by Nintendo. You go around", platform: "SWITCH", photo: "v1527504348/st5fzyj3rdwtazduuu5r.jpg", user_id: 1)
+game_one = Game.create(title: "Zelda", description: "The Legend of Zelda: Breath of the Wild is an action-adventure game developed and published by Nintendo. You go around", platform: "SWITCH", photo: "v1527504348/st5fzyj3rdwtazduuu5r.jpg", user_id: 1, price: 100)
 game_one.remote_photo_url = url_one
 game_one.save
 puts
 puts "Game Added completed"
 
 url_two = "http://res.cloudinary.com/le-wagon-hcquach/image/upload/v1527573901/cttchmkihhunnt6xltro.jpg"
-game_two = Game.create(title: "Mario Kart 8 Deluxe", description: "Hit the road with the definitive version of Mario Kart 8 and play anytime, anywhere! Race your friends or battle them in a revised battle mode on new and returning battle courses.", platform: "SWITCH", photo: "ilgamjlury6gekkghwci.jpg", user_id: 1)
+game_two = Game.create(title: "Mario Kart 8 Deluxe", description: "Hit the road with the definitive version of Mario Kart 8 and play anytime, anywhere! Race your friends or battle them in a revised battle mode on new and returning battle courses.", platform: "SWITCH", photo: "ilgamjlury6gekkghwci.jpg", user_id: 1, price:100)
 game_two.remote_photo_url = url_two
 game_two.save
 puts

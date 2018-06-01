@@ -1,49 +1,76 @@
 <%= content_for(:title) do %>
-Game Hopper-<%=@game.title%>
+Game Hopper-<%= @game.title %>
 <% end %>
+
 <div class="single-game-container">
 
   <div class="wrapper">
 
       <div class="game-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @game.photo, crop: :fill_pad %>');">
 
-      <div class="
-        <% case @game.platform %>
-        <% when "XBOX" %>
-        <%= "nav-xbox" %>
-        <% when "PS4" %>
-        <%= "nav-ps4" %>
-        <% when "SWITCH" %>
-        <%= "nav-switch" %>
-        <% end %>
-        ">
-      </div>
+        <div class="
+          <% case @game.platform %>
+          <% when "XBOX" %>
+          <%= "nav-xbox" %>
+          <% when "PS4" %>
+          <%= "nav-ps4" %>
+          <% when "SWITCH" %>
+          <%= "nav-switch" %>
+          <% end %>
+          ">
+        </div>
 
       </div>
 
       <div class="game-info">
 
-        <div class="title">
-          <h1><%= @game.title %></h1>
+        <div class="title
+        <% case @game.platform %>
+          <% when "XBOX" %>
+          <%= "title-xbox" %>
+          <% when "PS4" %>
+          <%= "title-ps4" %>
+          <% when "SWITCH" %>
+          <%= "title-switch" %>
+          <% end %>
+          "><h1><%= @game.title %></h1>
+        </div>
+
+        <div class="game-description">
           <h2><%= @game.description %></h2>
+          <h2><%= @game.price %>¥ \ Day </h2>
         </div>
 
         <div class="availability">
           <h2>
-            <% if @game.available %>
-              Available
-            <% else %>
-              Not Available
-            <% end %>
+            <%= @game.available ? "Available" : "Currently Not Available" %>
           </h2>
         </div>
 
-        <div class="button">
-        <%= link_to 'Delete', game_path(@game), method: :delete, class: "btn btn-danger btn-delete" %>
-        </div>
+        <div class="button-container">
 
-        <div class="button">
-        <%= link_to "Rent", game_rentals_path(@game), method: :create, class: "btn btn-primary btn-rent" %>
+          <div class="button">
+            <% if @game.user == current_user %>
+              <%= link_to 'Edit', edit_game_path(@game), class: "btn btn-success btn-edit" %>
+            <% end %>
+          </div>
+
+          <div class="button">
+            <% if @game.user == current_user %>
+              <%= link_to 'Delete', game_path(@game), method: :delete, class: "btn btn-danger btn-delete", :data => {:confirm => 'Are you sure?'} %>
+            <% end %>
+          </div>
+
+          <div class="button">
+            <% unless @game.user == current_user || !@game.available %>
+              <%#= link_to "Rent", game_rentals_path(@game), method: :create, class: "btn btn-primary btn-rent", data: { toggle: "modal", target:'#exampleModal' } %>
+              <button type="button" class="btn btn-green-flat-trigger">
+                Rent
+              </button>
+
+            <% end %>
+          </div>
+
         </div>
 
       </div>
@@ -55,4 +82,31 @@ Game Hopper-<%=@game.title%>
       data-markers="<%= @markers.to_json %>"
     ></div>
 
+</div>
+
+<div class="global-modal">
+   <div class="overlay"></div>
+   <div class="global-modal_contents modal-transition">
+    <div class="global-modal-header">
+      <span class="mobile-close"> X </span>
+      <h3> <span> Almost there!</span> <b>Review and finalize your rental<br>Contact and arrange the handover with the owner.</b></h3>
+    </div>
+    <div class="global-modal-body">
+      <div class="content-left">
+        <p>
+          <strong>Game</strong>
+          <%= @game.title %><br>
+          <strong>Meeting point</strong>
+          <%= @game.user.address %><br>
+        </p>
+        <%= link_to "Confirm", game_rentals_path(@game), method: :create, class: "btn-green-flat" %>
+      </div>
+      <div class="content-right">
+       <p> Arrange handover with<br>
+        <strong><%= @game.user.username %></strong>
+        <br> through the link below.</p>
+       <%= mail_to @game.user.email, "Send", subject: "You've got a new rental!", class:"btn-green-flat" %>
+     </div>
+   </div>
+ </div>
 </div>
