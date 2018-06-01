@@ -1,35 +1,18 @@
-// .rental-block {
-//   display: flex;
-//   margin: 40px 0px;
-//   justify-content: center;
-// }
-
-// .rental-card {
-//   border-radius: 5px;
-//   box-shadow: 1px;
-// }
-
-// .rental-description {
-//   color: #2d2d2d;
-//   padding: 30px;
-//   width: 400px;
-// }
-
-// .btn-rental-delete {
-//   font-family: 'Glegoo', serif;
-//   color: #2d2d2d;
-//   text-align: center;
-//   bottom: 20px;
-//   font-size: 24px;
-//   text-decoration: none;
-// }
-
-// .btn-rental {
-//   padding: 40px 0px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }
+.banner {
+  color: white;
+  text-align: center;
+  height: 40vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
 
 .btn-medium {
   color: #e55757;
@@ -68,7 +51,7 @@ ul {
 .product-body p {
   font-weight: lighter;
   margin-bottom: 0;
-  color: #2d2d2d;
+  color: white;
   padding: 0px 20px;
 }
 
@@ -89,22 +72,12 @@ ul {
 .product-controls p {
   padding: 0 20px;
   font-size: 17px;
-  color: #2d2d2d;
+  color: white;
 }
 
 
 /* Hover effects */
 .product:hover {
-  background: #f7f7fa;
+  background: rgba(26, 26, 26, 0.9);
   cursor: pointer;
-}
-
-// .product:hover .product-upvote {
-//   transform: scale(1.2)
-// }
-.product:hover .product-controls-hidden p .product-body p{
-  color: #E6E6E6;
-}
-.product-upvote:hover .product-arrow {
-  border-bottom: 9px solid #5898f1;
 }
