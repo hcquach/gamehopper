@@ -24,7 +24,7 @@ Game Hopper - Rental List
             <li><p>PRICE ¥<%= rental.game.price %></p></li>
             <li><p>FROM <%= rental.start_date.strftime("%A, %b %d") %></p></li>
             <li><p>UNTIL <%= rental.end_date.strftime("%A, %b %d") %></p></li>
-            <li> <%= link_to 'Cancel', rental_path(rental), method: :delete, class: "btn-green-flat", :data => {:confirm => 'Are you sure?'} %></li>
+            <li> <%= link_to 'Finish', rental_path(rental), method: :delete, class: "btn-red-flat", :data => {:confirm => 'Are you sure?'} %></li>
           </ul>
         </div>
         <% end %>
