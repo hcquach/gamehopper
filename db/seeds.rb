@@ -49,6 +49,7 @@ def seed_games
     game_params = {
       user_id: 1,
       title: game.name,
+      price: 100,
       description: game.summary,
       # photo: "http:#{game.cover.url}",
       platform: ["XBOX", "SWITCH", "PS4"].sample
