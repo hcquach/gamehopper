@@ -51,13 +51,13 @@ Game Hopper-<%= @game.title %>
 
           <div class="button">
             <% if @game.user == current_user %>
-              <%= link_to 'Edit', edit_game_path(@game), class: "btn btn-success btn-edit" %>
+              <%= link_to 'Edit', edit_game_path(@game), class: "btn btn-blue-flat" %>
             <% end %>
           </div>
 
           <div class="button">
             <% if @game.user == current_user %>
-              <%= link_to 'Delete', game_path(@game), method: :delete, class: "btn btn-danger btn-delete", :data => {:confirm => 'Are you sure?'} %>
+              <%= link_to 'Delete', game_path(@game), method: :delete, class: "btn btn-red-flat", :data => {:confirm => 'Are you sure?'} %>
             <% end %>
           </div>
 
@@ -94,31 +94,26 @@ Game Hopper-<%= @game.title %>
     <div class="global-modal-body">
       <div class="content-left">
         <p>
-          <strong>Game</strong>
+          <strong>Game: </strong>
           <%= @game.title %><br>
-          <strong>Meeting point</strong>
+          <strong>Meeting point: </strong>
           <%= @game.user.address %><br>
         </p>
-        <p>
+        <div class="rent-form">
           <%= simple_form_for [@game, @rental] do |f| %>
-            <%= f.input :start_date, as: :date, html5: true ,class: "date-form"%>
-            <%= f.input :end_date, as: :date, html5: true ,class: "date-form"%>
-            <%# if params[:start_date] >= params[:end_date] %>
-            <%# flash[:alert] = "do you have time machine?" %>
-            <%# end %>
+          <p>
+            <%= f.input :start_date, as: :date, html5: true, label: 'Start date', class: "date-form"%>
+            <%= f.input :end_date, as: :date, html5: true , label: 'End date', class: "date-form"%>
             <%= f.submit "Confirm", class: "btn-green-flat" %>
-
           <% end %>
-        </p>
+          </p>
+        </div>
 
-
-
-        <%#= link_to "Confirm", game_rentals_path(@game), method: :create, class: "btn-green-flat" %>
       </div>
       <div class="content-right">
        <p> Arrange handover with<br>
         <strong><%= @game.user.username %></strong>
-        <br> through the link below.</p>
+        <br> following the link below.</p>
        <%= mail_to @game.user.email, "Send", subject: "You've got a new rental!", class:"btn-green-flat" %>
      </div>
    </div>

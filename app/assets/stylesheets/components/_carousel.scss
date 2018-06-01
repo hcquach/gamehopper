@@ -19,13 +19,17 @@
 .title-carousel {
   position: absolute;
   bottom: -15px;
-  left: 10px;
+  // left: 10px;
   color: white;
 }
 .title-carousel h5 {
-  margin: -14px;
+  text-align: left;
+  margin: 0px;
+  margin-bottom: 30px;
 }
 .title-carousel h3 {
+  text-align: left;
   font-size: 36px;
   color: white;
+  margin: 0px;
 }
