@@ -24,6 +24,8 @@ class GamesController < ApplicationController
   end
 
   def show
+    # @rental = Rental.where(game_id: @game.id)
+    @rental = Rental.new
     @markers =
       [ {
         lat: @game.user.latitude,
