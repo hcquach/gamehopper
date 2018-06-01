@@ -75,10 +75,3 @@ seed_games
 # p response
 
 
-
-
-
-
-
-
-

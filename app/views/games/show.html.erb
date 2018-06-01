@@ -99,7 +99,21 @@ Game Hopper-<%= @game.title %>
           <strong>Meeting point</strong>
           <%= @game.user.address %><br>
         </p>
-        <%= link_to "Confirm", game_rentals_path(@game), method: :create, class: "btn-green-flat" %>
+        <p>
+          <%= simple_form_for [@game, @rental] do |f| %>
+            <%= f.input :start_date, as: :date, html5: true ,class: "date-form"%>
+            <%= f.input :end_date, as: :date, html5: true ,class: "date-form"%>
+            <%# if params[:start_date] >= params[:end_date] %>
+            <%# flash[:alert] = "do you have time machine?" %>
+            <%# end %>
+            <%= f.submit "Confirm", class: "btn-green-flat" %>
+
+          <% end %>
+        </p>
+
+
+
+        <%#= link_to "Confirm", game_rentals_path(@game), method: :create, class: "btn-green-flat" %>
       </div>
       <div class="content-right">
        <p> Arrange handover with<br>
