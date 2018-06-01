@@ -18,7 +18,7 @@ Game Hopper-Landing
         <div class="carousel-caption">
         <div class="title-carousel">
           <h3>Game Hopper</h3>
-          <h5>Stop buying and start renting</h5>
+          <h5>Game sharing made easy</h5>
         </div>
     </div>
     </div>
@@ -87,6 +87,7 @@ Game Hopper-Landing
       <!-- Template for games to be turned into cards -->
       <% @games.each do |game| %>
         <div class="col-xs-12 col-sm-3">
+          <div class="card-game-home">
           <!-- entire card body wrapped in link -->
           <%= link_to game_path(game) do %>
             <div class="card-body">
@@ -104,6 +105,7 @@ Game Hopper-Landing
               </div>
             </div>
           <% end %>
+          </div>
         </div>
       <% end %>
     </div>

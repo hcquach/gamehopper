@@ -129,16 +129,14 @@ body {
 .card-title {
   margin-top: 5px;
   color: gray;
-  font-size: fit-width;
+  font-size: 15px;
   font-weight: bold;
-
-
+  text-align: center;
 }
 
 .card-title h2 a {
-  font-size: 20px;
+  font-size: 15px;
   text-decoration: none;
-  text-align: left;
   color: black;
 }
 
@@ -159,4 +157,8 @@ a:hover {
 
 .image-404 {
   padding: 40px;
+}
+
+.card-game-home {
+  margin: 20px 0;
 }

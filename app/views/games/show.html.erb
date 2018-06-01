@@ -37,14 +37,14 @@ Game Hopper-<%= @game.title %>
         </div>
 
         <div class="game-description">
-          <h2><%= @game.description %></h2>
-          <h2><%= @game.price %>¥ \ Day </h2>
+          <h2><%= @game.description[0..200] %>...</h2>
+          <h2><strong><%= @game.price %>¥ \ Day </strong></h2>
         </div>
 
         <div class="availability">
-          <h2>
+          <h2><strong>
             <%= @game.available ? "Available" : "Currently Not Available" %>
-          </h2>
+          </strong></h2>
         </div>
 
         <div class="button-container">
