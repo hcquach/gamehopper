@@ -11,18 +11,19 @@ class RentalsController < ApplicationController
   # end
 
   def create
-    @rental = Rental.new(start_date: Date.today, end_date: Date.today + 7)
-    current_signed_in_user
-    @rental.game_id = params[:game_id]
+    @rental = Rental.new(rental_params)
+    @rental.user = current_user
+    @rental.game = Game.find(params[:game_id])
     if set_game_rental.user == @rental.user
       flash[:alert] = "You cannot rent your own game"
       redirect_to game_path(@game)
     elsif @rental.save && @game.available
-      set_game_rental
       @game.available = false
+      @game.price = ((@rental.end_date - @rental.start_date) * @game.price) / 86400
       @game.save
       redirect_to rentals_path
     else
+      flash[:alert] = "Rental can not be made"
       redirect_to game_path(@game)
     end
   end
