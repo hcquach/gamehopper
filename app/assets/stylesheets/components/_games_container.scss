@@ -114,6 +114,12 @@ body {
   border-radius: 3px;
 }
 
+.card:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
 .card-platform {
   font-size: fit-width;
   text-transform: uppercase;
