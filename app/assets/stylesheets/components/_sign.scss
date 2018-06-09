@@ -1,5 +1,5 @@
 .sign-image{
-  // background-image: url('createnew.jpg');
+  background-image: url('https://res.cloudinary.com/le-wagon-hcquach/image/upload/v1527838928/video-games-super-mario-galaxy-1920x1080-55914_1.jpg');
   background-size: cover;
   height: 100vh;
   h2 {
@@ -13,7 +13,7 @@
   justify-content: center;
 }
 
-label {
+.form-group > label {
   color: white;
 }
 
